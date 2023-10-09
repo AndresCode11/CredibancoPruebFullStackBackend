@@ -1,0 +1,18 @@
+<section class="">
+  <div class="container">
+    <h1 class="products__title">Lista de productos</h1>
+    <form class="products__search">
+      <label>Busqueda: </label>
+      <input type="text" name="" id="" (keyup)="handleSearchByText($event)" >
+    </form>
+    <div class="products-container">
+      <div *ngFor="let product of products" class="products-container__item">
+          <img src="{{ product.images[0] }}">
+          <h3>{{ product.title }}</h3>
+          <p>${{ product.price }}</p>
+          <button (click)="handleAddProductCart(product)" class="button">Agregar carrito</button>
+      </div>
+
+    </div>
+  </div>
+</section>

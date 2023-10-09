@@ -1,0 +1,25 @@
+<section>
+  <div class="container">
+    <h1 class="products__title">Lista tarjetas</h1>
+    <table class="card__table">
+      <tr>
+        <th>Numero</th>
+        <th>Saldo</th>
+        <th>Nombre</th>
+        <th>Fecha de expiracion</th>
+        <th>CVC</th>
+        <th>Opciones</th>
+
+      </tr>
+      <tr *ngFor="let creditCard of creditCards">
+        <td>{{ creditCard.number  }}</td>
+        <td>${{ creditCard.balance }}</td>
+        <td>{{ creditCard.name }}</td>
+        <td>{{ creditCard.expire }}</td>
+        <td>{{ creditCard.cvc }}</td>
+        <td><button (click)="updateBalance(creditCard.id)" class="checkout__button myBtn">Agregar Saldo</button></td>
+      </tr>
+    </table>
+  </div>
+</section>
+

@@ -1,0 +1,35 @@
+<section>
+  <div class="container">
+    <div class="create-cart">
+      <div>
+        <h1 class="products__title">Crear Tarjeta</h1>
+        <form  [formGroup]="formGroup" class="create-cart__form" (submit)="submit()">
+            <label>Nombre</label>
+            <input type="text" name="" formControlName="name">
+            <label>Numero de tarjeta</label>
+            <input type="text" name="" formControlName="number">
+            <div class="create-cart__form__date-container">
+              <div class="create-cart__form__date-container__date">
+                <label>Mes</label>
+                <input type="text" name="" formControlName="month">
+              </div>
+              <div class="create-cart__form__date-container__date">
+                <label>Año</label>
+                <input type="text" name="" formControlName="year">
+              </div>
+            </div>
+
+            <label>CVC</label>
+            <input type="text" name="" formControlName="cvc">
+
+            <label>Tipo</label>
+            <select>
+              <option vale="debito">Debito</option>
+              <option vale="credito">Credito</option>
+            </select>
+            <button type="submit" class="checkout__button">Crear</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

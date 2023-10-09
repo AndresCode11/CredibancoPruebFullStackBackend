@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="products__title">Checkout</h1>
+  <div class="checkout">
+        <div>
+          <h2>Informacion de pago</h2>
+          <form class="checkout__form" [formGroup]="formGroup">
+            <label>Nombre</label>
+            <input type="text" name="" formControlName="name">
+            <label>Numero de tarjeta</label>
+            <input type="text" name="" formControlName="number">
+            <div class="create-cart__form__date-container">
+              <div class="create-cart__form__date-container__date">
+                <label>Mes</label>
+                <input type="text" name="" formControlName="month">
+              </div>
+              <div class="create-cart__form__date-container__date">
+                <label>Año</label>
+                <input type="text" name="" formControlName="year">
+              </div>
+            </div>
+
+            <label>CVC</label>
+            <input type="text" name="" formControlName="cvc">
+
+          </form>
+        </div>
+        <div>
+          <h2>Detalles de compra</h2>
+          <div class="max-h-500">
+            <div *ngFor="let product of getProductsCart()" class="side-cart__item">
+              <div>
+                <img src="{{ product.images[0] }}">
+              </div>
+              <div class="side-cart__item__description">
+                <h4 class="side-cart__item__title">{{ product.title }}</h4>
+                <p class="side-cart__item__price">${{ product.price }} &#215; ${{ product.quantity }}</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="checkout__total">Total: {{ totalCheckout() }}</h3>
+            <button (click)="submit()" class="checkout__button">Realizar pago</button>
+          </div>
+        </div>
+  </div>
+</div>

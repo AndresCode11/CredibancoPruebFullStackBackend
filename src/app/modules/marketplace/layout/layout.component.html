@@ -1,0 +1,38 @@
+<div class="nab-var">
+  <div class="container">
+    <ul class="nab-var_items">
+      <li>
+        <img src="assets/header-icon.png" height="60" width="90">
+      </li>
+      <li>
+        <a routerLink="/">Lista Productos</a>
+      </li>
+      <li>
+        <a routerLink="/credit-cart">Modulo Tarjetas</a>
+      </li>
+      <li>
+        <a routerLink="/checkout">Checkout</a>
+      </li>
+      <li>Carrito de compras</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SIDE CART -->
+<div class="side-cart" id="side-cart">
+  <div *ngFor="let product of getProductsCart()" class="side-cart__item">
+    <div>
+      <img src="{{ product.images[0] }}">
+    </div>
+    <div class="side-cart__item__description">
+      <h4 class="side-cart__item__title">{{ product.title }}</h4>
+      <p class="side-cart__item__price">${{ product.price }} &#215; ${{ product.quantity }}</p>
+    </div>
+  </div>
+  <div class="side-cart__footer">
+    <button>PAGAR</button>
+  </div>
+</div>
+<!--/SIDE CART -->
+<router-outlet></router-outlet>
+
