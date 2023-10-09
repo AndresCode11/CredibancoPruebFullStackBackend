@@ -10,14 +10,14 @@ import {CartService} from "../../../services/cart-service/cart.service";
 export class HomePageComponent implements OnInit{
 
     products: any = [];
+    disabled = true;
     constructor(private marketPlaceService: MarketPlaceService, private cartService: CartService) {
     }
 
     handleSideCart() {
       let sideCart = document.getElementById("side-cart");
-      sideCart?.classList.toggle("active");
+      sideCart?.classList.add("active");
     }
-
     handleGetProducts() {
       this.marketPlaceService.getProducts()
         .subscribe((data)  => {
@@ -35,6 +35,7 @@ export class HomePageComponent implements OnInit{
 
     handleAddProductCart(product: any) {
       this.cartService.addToCart(product);
+      this.handleSideCart()
     }
 
     ngOnInit() {

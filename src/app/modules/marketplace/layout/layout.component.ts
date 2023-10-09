@@ -18,6 +18,11 @@ export class LayoutComponent implements OnInit{
   constructor(private marketPlaceService: MarketPlaceService, private cartService: CartService) {
   }
 
+  handleSideCart() {
+    let sideCart = document.getElementById("side-cart");
+    sideCart?.classList.toggle("active");
+  }
+
   getProductsCart() {
     return this.cartService.getProducts();
   }

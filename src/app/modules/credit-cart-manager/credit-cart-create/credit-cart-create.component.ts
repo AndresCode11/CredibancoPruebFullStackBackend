@@ -14,15 +14,23 @@ export class CreditCartCreateComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private creditCardService: CreditCardService) {
   }
 
+  generateRandomCard() {
+      let min = Math.ceil(10000000000000000);
+      return "" + Math.floor(Math.random() *  min)
+  }
+
+  generateRandomCVC() {
+    let min = Math.ceil(1000);
+    return "" + Math.floor(Math.random() *  min)
+  }
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
       name: ['', Validators.required],
-      number: ['', Validators.required],
+      number: [this.generateRandomCard(), Validators.required],
       month: ['', Validators.required],
       year: ['', Validators.required],
-      cvc: ['', Validators.required]
+      cvc: [this.generateRandomCVC(), Validators.required]
     })
-
 
   }
 

@@ -125,6 +125,9 @@ h1,h2,h3,h4,h5,h6,p,li,span,label {
   }
 }
 
+.cart-link {
+  cursor: pointer;
+}
 
 .side-cart {
   transform: translateX(100%);
@@ -139,6 +142,17 @@ h1,h2,h3,h4,h5,h6,p,li,span,label {
   z-index: 999;
   padding: 10px;
   overflow-y: auto;
+
+  &__close {
+    background-color: #000;
+    color: #FFF;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+  }
+
   &.active {
     transform: translate(0);
   }

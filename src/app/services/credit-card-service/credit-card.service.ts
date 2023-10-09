@@ -11,8 +11,8 @@ export class CreditCardService {
   private creditCardDiscountUrl: string;
 
   constructor(private http: HttpClient) {
-    this.creditsCardsUrl = 'http://localhost:8080/api/v1/card';
-    this.creditCardDiscountUrl = 'http://localhost:8080/api/v1/card/discount'
+    this.creditsCardsUrl = 'http://credibancospringboot-env.eba-jhijkhmh.us-east-2.elasticbeanstalk.com/api/v1/card';
+    this.creditCardDiscountUrl = 'http://credibancospringboot-env.eba-jhijkhmh.us-east-2.elasticbeanstalk.com/api/v1/card/discount'
   }
 
   // ALL CREDIT CARDS

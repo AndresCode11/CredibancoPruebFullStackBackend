@@ -13,13 +13,19 @@
       <li>
         <a routerLink="/checkout">Checkout</a>
       </li>
-      <li>Carrito de compras</li>
+      <li class="cart-link" (click)="handleSideCart()">Carrito de compras</li>
     </ul>
   </div>
 </div>
 
 <!-- SIDE CART -->
 <div class="side-cart" id="side-cart">
+  <div class="">
+    <button (click)="handleSideCart()" class="side-cart__close">x</button>
+    <h2>Carrito de compras</h2>
+    <a (click)="handleSideCart()" routerLink="/checkout" class="checkout__button">Ir a checkout</a>
+
+  </div>
   <div *ngFor="let product of getProductsCart()" class="side-cart__item">
     <div>
       <img src="{{ product.images[0] }}">
@@ -30,7 +36,6 @@
     </div>
   </div>
   <div class="side-cart__footer">
-    <button>PAGAR</button>
   </div>
 </div>
 <!--/SIDE CART -->
